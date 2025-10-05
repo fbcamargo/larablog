@@ -14,6 +14,9 @@
                 <tr v-for="post in posts" :key="post.id">
                     <td>{{ post.title }}</td>
                     <td>{{ post.body }}</td>
+                    <td>
+                        <button @click="deletePost(post.id)">Delete</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -22,10 +25,16 @@
 
 <script setup lang="ts">
 import { Post } from '@/types/Post';
-import { Link } from '@inertiajs/vue3';
+import { Link, useForm } from '@inertiajs/vue3';
 defineProps<{
     posts: Post[]
 }>();
 
-const headers = ['posts', 'body'];
+const headers = ['posts', 'body', 'actions'];
+
+const form = useForm({});
+
+const deletePost = (id: number) => {
+    form.delete(`posts/${id}`)
+}
 </script>
