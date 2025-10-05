@@ -17,4 +17,23 @@ class PostController extends Controller
             ]
         );
     }
+
+    public function create()
+    {
+        return Inertia::render(
+            'Post/Create'
+        );
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'body' => 'required',
+        ]);
+
+        Post::create($data);
+
+        return redirect()->route('posts.index');
+    }
 }
