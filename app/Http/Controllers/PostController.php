@@ -42,4 +42,27 @@ class PostController extends Controller
         $post->delete();
         return redirect()->back();
     }
+
+    public function edit(Post $post)
+    {
+        return Inertia::render(
+            'Post/Create',
+            [
+                'post' => $post,
+                'isUpdating' => true
+            ]
+        );
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $data = $request->validate([
+            'title' => 'required|max:255',
+            'body' => 'required',
+        ]);
+
+        $post->update($data);
+
+        return redirect()->route('posts.index');
+    }
 }

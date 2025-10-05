@@ -10,13 +10,28 @@
 </template>
 <script setup lang="ts">
 import { Link, useForm } from '@inertiajs/vue3';
+import { Post } from '@/types/Post';
+import { onMounted } from 'vue';
+
+const props = defineProps<{
+    post: Post,
+    isUpdating: {
+        type: boolean,
+        default: false
+    }
+}>();
 
 const form = useForm({
     title: '',
     body: ''
 });
 
-const submit = () => {
-    form.post('/posts')
-};
+const addPost = () => form.post('/posts');
+const updatePost = () => form.put(`/posts/${props.post.id}`);
+const submit = () => (props.isUpdating ? updatePost() : addPost());
+
+onMounted(() => {
+    form.title = props.post.title;
+    form.body = props.post.body;
+});
 </script>

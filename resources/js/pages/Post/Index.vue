@@ -16,6 +16,7 @@
                     <td>{{ post.body }}</td>
                     <td>
                         <button @click="deletePost(post.id)">Delete</button>
+                        <Link :href="`posts/${post.id}/edit`">Edit</Link>
                     </td>
                 </tr>
             </tbody>
