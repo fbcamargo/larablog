@@ -2,18 +2,6 @@
 
 > CRUD completo de posts de blog construído com Laravel, Inertia.js e Vue 3, DX moderna e uma base limpa para iniciar projetos SPA/SSR em Laravel.
 
-## Badges
-
-![Laravel](https://img.shields.io/badge/Laravel-12%2B-FF2D20.svg)
-![PHP](https://img.shields.io/badge/PHP-8.4%2B-777BB4.svg)
-![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D.svg)
-![Inertia.js](https://img.shields.io/badge/Inertia.js-%F0%9F%9A%80-6B46C1.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-
-## Status do Projeto
-
-Concluído
-
 ## Tabela de Conteúdos
 
 - [Badges](#badges)
@@ -25,6 +13,14 @@ Concluído
 - [Instalação](#instalação)
 - [Execução](#execução)
 - [Licença](#licença)
+
+## Badges
+
+![Laravel](https://img.shields.io/badge/Laravel-12%2B-FF2D20.svg)
+![PHP](https://img.shields.io/badge/PHP-8.4%2B-777BB4.svg)
+![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D.svg)
+![Inertia.js](https://img.shields.io/badge/Inertia.js-%F0%9F%9A%80-6B46C1.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 ## Descrição
 
